@@ -30,3 +30,45 @@ Visite a página de principal do AdoPet e teste os botões header;
 Visite a página de /login do Adopet;
 Visite a página de /home do Adopet;
 Visite a página de /home do AdoPet e clique no botão “Falar com o responsável”.
+
+# Exercio 2
+
+Cenário: Falha na tentativa de cadastro
+
+Passos:
+
+O usuário acessa a página de cadastro.
+O usuário deixa os campos obrigatórios (nome, email, senha e confirmação de senha) em branco.
+O usuário clica no botão cadastrar.
+
+Resultados esperados:
+
+O sistema valida os campos obrigatórios em branco.
+O sistema exibe mensagens de erro indicando que os campos obrigatórios devem ser preenchidos.
+
+# Exercicio 3
+
+Funcionalidade: Login no site Adopet
+
+Cenário: Login no sistema com sucesso
+
+Passos:
+
+O usuário acessa a página de login.
+O usuário insere seu email "test-wc@mail.com" e senha "Senha321" nos campos correspondentes.
+O usuário clica no botão entrar.
+
+Resultados esperados:
+
+O sistema autentica as credenciais fornecidas.
+O sistema redireciona o usuário para a página "/home"
+
+## Exercício 3.1
+
+Funcionalidade: Login no site Adopet
+
+Cenário: Falha no login do sistema
+
+Passos:
+
+O usuário acessa a página de login.
