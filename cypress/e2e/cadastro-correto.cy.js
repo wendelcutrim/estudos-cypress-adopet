@@ -1,4 +1,4 @@
-describe('Cadastro no site Adopet', () => {
+describe('Página de cadastro', () => {
     const baseUrl = 'https://adopet-frontend-cypress.vercel.app/';
 
     it('Deve preencher os campos do formulário corretamente e cadastrar um novo usuário', () => {
