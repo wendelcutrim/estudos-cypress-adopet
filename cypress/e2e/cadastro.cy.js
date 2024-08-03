@@ -1,11 +1,16 @@
 describe('Página de cadastro', () => {
     let baseUrl = 'https://adopet-frontend-cypress.vercel.app/';
+    let tabTitle = 'AdoPet';
 
     beforeEach(() => {
         cy.visit(baseUrl);
         cy.get('[data-test="register-button"]').click();
         cy.url().should('contain', '/cadastro');
-    })
+    });
+
+    afterEach(() => {
+        cy.title().should('equal', tabTitle);
+    });
 
     it('Deve preencher os campos do formulário corretamente e cadastrar um novo usuário', () => {
         cy.get("input[data-test='input-name']").type('Teste Cadastro Wc');
