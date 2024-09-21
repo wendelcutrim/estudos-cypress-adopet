@@ -5,7 +5,7 @@ describe('Página de cadastro', () => {
     beforeEach(() => {
         cy.visit(baseUrl);
         cy.get('[data-test="register-button"]').click();
-        cy.url().should('contain', '/cadastro');
+        cy.checkRoutePath({ path: '/cadastro' })
     });
 
     afterEach(() => {
@@ -13,10 +13,14 @@ describe('Página de cadastro', () => {
     });
 
     it('Deve preencher os campos do formulário corretamente e cadastrar um novo usuário', () => {
-        cy.get("input[data-test='input-name']").type('Teste Cadastro Wc');
-        cy.get("input[data-test='input-email']").type('test-wc@mail.com');
-        cy.get("input[data-test='input-password']").type('Senha321');
-        cy.get("input[data-test='input-confirm-password']").type('Senha321');
+        const user = {
+            name: 'Teste Cadastro Wc',
+            email: 'test-wc@mail.com',
+            password: 'Senha321',
+            confirmPassword: 'Senha321'
+        };
+
+        cy.cadastrar(user);
         cy.get("button[data-test='submit-button']").click();
     });
 
